@@ -1,4 +1,5 @@
 node[:deploy].each do |application, deploy|
+    Chef::Log.info("Application #{application}")
 	node[:environment_variables].each do |name, value|
 		ENV["#{name}"] = "#{value}"
 	end
